@@ -11,6 +11,8 @@ class Profile(models.Model):
     email = models.EmailField(max_length = 250, unique = True)
     first_name = models.CharField(max_length = 250)
     last_name = models.CharField(max_length = 250,null = True)
+    def __str__(self):
+        return str(self.username)
 '''
 name : Recipe
 fields: name, profile - from Profile model
