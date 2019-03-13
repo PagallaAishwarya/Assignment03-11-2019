@@ -21,6 +21,7 @@ this model is to create recipes for different users. one recipe to one user
 class Recipe(models.Model):
     name = models.CharField(max_length = 250, null = False, default = 'other')
     profile = models.OneToOneField(Profile, on_delete = models.CASCADE, unique = True)
+    
 '''
 name : Recipe
 fields: step_text, recipe : from Recipe
@@ -29,6 +30,8 @@ this model is to create text to recipe.
 class Step_Model(models.Model):
     step_text = models.TextField(null = False)
     recipe = models.ForeignKey(Recipe, on_delete = models.CASCADE)
+    def __str__(self):
+        return str(self.step_text)
 '''
 name : Recipe
 fields: text, recipe : from Recipe
@@ -37,3 +40,5 @@ this model is to create ingredients for  different recipes. can add one or more 
 class Ingredient_Model(models.Model):
     text = models.TextField(null = False)
     recipe = models.ForeignKey(Recipe, on_delete = models.CASCADE)
+    def __str__(self):
+        return str(self.text)

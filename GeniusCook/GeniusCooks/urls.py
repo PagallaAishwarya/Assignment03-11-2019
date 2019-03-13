@@ -6,6 +6,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('Recipes',views.RecipeView)
+router.register('Recipes/search/',views.RecipeSearchView)
+
 #router.register('Recipes/<string:pk>/',views.RecipeDelView)
 #router.register('Recipes/<string:pk>/',views.RecipeView)
 
